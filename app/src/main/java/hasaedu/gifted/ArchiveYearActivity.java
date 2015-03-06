@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import hasaedu.gifted.DAL.ArchiveYearContent;
-import hasaedu.gifted.Models.ArchiveYears;
+import hasaedu.gifted.dal.ArchiveYearContent;
+import hasaedu.gifted.models.ArchiveYears;
 
 
 public class ArchiveYearActivity extends ActionBarActivity {
