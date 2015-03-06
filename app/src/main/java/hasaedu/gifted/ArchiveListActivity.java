@@ -10,10 +10,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import hasaedu.gifted.Adapters.WinnerAdapter;
-import hasaedu.gifted.DAL.ArchiveWinnerContent;
+import hasaedu.gifted.adapters.WinnerAdapter;
+import hasaedu.gifted.dal.ArchiveWinnerContent;
 
-import hasaedu.gifted.Models.ArchiveWinner;
+import hasaedu.gifted.models.ArchiveWinner;
 
 
 
