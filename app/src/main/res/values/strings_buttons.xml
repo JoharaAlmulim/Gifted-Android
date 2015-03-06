@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="btn_register_text" >Register</string>
+    <string name="btn_program_text" >Programs</string>
+    <string name="btn_calendar_text">Calendar</string>
+    <string name="btn_login_text">Login</string>
+</resources>

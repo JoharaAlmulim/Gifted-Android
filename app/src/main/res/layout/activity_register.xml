@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="hasaedu.gifted.Register">
+    <!-- Login progress -->
+    <ProgressBar android:id="@+id/register_progress" style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/register_form" >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            >
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_your_name"
+                android:id="@+id/txtname"
+                android:inputType="textPersonName"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtemail"
+                android:hint="@string/enter_your_email"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="15dp" />
+
+            <EditText android:id="@+id/txtpassword" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="@string/prompt_password"
+                android:inputType="textPassword"
+                android:maxLines="1" android:singleLine="true"
+                android:layout_marginTop="15dp"
+                />
+
+            <EditText android:id="@+id/txtrenterpassword" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="@string/prompt_renter_password"
+                android:inputType="textPassword"
+                android:maxLines="1" android:singleLine="true"
+                android:layout_marginTop="15dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtmobile"
+                android:hint="@string/enter_your_mobile"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:inputType="phone"
+                android:layout_marginTop="15dp" />
+
+
+            <Switch
+                android:id="@+id/sch_sms_notify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/Receiving_SMS_notifications" />
+
+            <Button android:id="@+id/btn_register" style="?android:textAppearanceSmall"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:text="@string/btn_register_text"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="center"
+                android:text="@string/already_have_account"
+                android:id="@+id/textView"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <Button android:id="@+id/btn_login" style="?android:textAppearanceSmall"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" android:text="@string/btn_login_text"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

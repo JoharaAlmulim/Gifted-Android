@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_Home">Home</string>
+    <string name="action_programs">Programs</string>
+    <string name="action_Calendar">Calendar of events</string>
+    <string name="action_archive">Archive</string>
+    <string name="action_aboutus">About Us</string>
+    <string name="action_contactus">Contact Us</string>
+</resources>

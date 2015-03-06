@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="btn_student_text">Student</string>
+    <string name="btn_parent_text">Parent</string>
+    <string name="btn_teacher_text">Teacher</string>
+</resources>

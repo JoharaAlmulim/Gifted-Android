@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hasaedu.gifted" >
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.internet" />
+    <uses-permission android:name="android.permission.send_sms" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Register"
+            android:label="@string/title_activity_register"
+            android:parentActivityName=".LoginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.LoginActivity" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.MainActivity" />
+
+            <!-- android:windowSoftInputMode="adjustResize|stateVisible" -->
+
+        </activity>
+        <activity
+            android:name=".ProgramsActivity"
+            android:label="@string/title_activity_programs"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CalendarActivity"
+            android:label="@string/title_activity_calendar"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AboutUsActivity"
+            android:label="@string/title_activity_about_us"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ContactUsActivity"
+            android:label="@string/title_activity_contact_us"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ArchiveYearActivity"
+            android:label="@string/title_activity_archive_year"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Programs_List_Activity"
+            android:label="@string/title_activity_programs__list_"
+            android:parentActivityName=".ProgramsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.ProgramsActivity" />
+        </activity>
+        <activity
+            android:name=".Program_DetailActivity"
+            android:label="@string/title_activity_program__detail"
+            android:parentActivityName=".Programs_List_Activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.Programs_List_Activity" />
+        </activity>
+        <activity
+            android:name=".ArchiveListActivity"
+            android:label="@string/title_activity_archive_list"
+            android:parentActivityName=".ArchiveYearActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.ArchiveYearActivity" />
+        </activity>
+    </application>
+
+</manifest>

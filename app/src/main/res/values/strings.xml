@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Mawhiba</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register">Register</string>
+    <string name="btn_archive_text">Archive</string>
+    <string name="title_activity_programs">Programs</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="title_program_list">programs</string>
+    <string name="title_program_detail">program Detail</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="title_activity_contact_us">ContactUsActivity</string>
+    <string name="title_activity_archive_year">ArchiveYearActivity</string>
+    <string name="title_activity_programs__list_">Programs_List_Activity</string>
+    <string name="Programs_for_Year">Program For</string>
+    <string name="title_activity_program__detail">Program_DetailActivity</string>
+    <string name="title_activity_archive_list">ArchiveListActivity</string>
+    <string name="winner_for_Year">Archive of Year</string>
+
+
+</resources>

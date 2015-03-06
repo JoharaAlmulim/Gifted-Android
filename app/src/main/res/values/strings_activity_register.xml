@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="prompt_renter_password">Re-enter Password</string>
+    <string name="enter_your_mobile">Enter Your Mobile Number</string>
+    <string name="Receiving_SMS_notifications">Receiving SMS notifications</string>
+    <string name="already_have_account">Already have account?</string>
+</resources>
