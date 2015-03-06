@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import hasaedu.gifted.Adapters.ProgramAdapter;
-import hasaedu.gifted.DAL.ProgramContent;
-import hasaedu.gifted.Models.Program;
+import hasaedu.gifted.adapters.ProgramAdapter;
+import hasaedu.gifted.dal.ProgramContent;
+import hasaedu.gifted.models.Program;
 
 
 public class Programs_List_Activity extends ActionBarActivity {

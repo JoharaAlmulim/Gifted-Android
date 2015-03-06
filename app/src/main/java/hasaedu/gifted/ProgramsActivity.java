@@ -10,10 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
-import hasaedu.gifted.DAL.ProgramCategoryContent;
-import hasaedu.gifted.Models.ProgramCategory;
+import hasaedu.gifted.dal.ProgramCategoryContent;
+import hasaedu.gifted.models.ProgramCategory;
 
 
 public class ProgramsActivity extends ActionBarActivity {
