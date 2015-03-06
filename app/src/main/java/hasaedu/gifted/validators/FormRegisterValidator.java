@@ -1,4 +1,4 @@
-package hasaedu.gifted.Validator;
+package hasaedu.gifted.validators;
 
 import android.text.TextUtils;
 
