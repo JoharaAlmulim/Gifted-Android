@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 
-import hasaedu.gifted.Validator.FormRegisterValidator;
+import hasaedu.gifted.validators.FormRegisterValidator;
 
 
 public class Register extends ActionBarActivity {
