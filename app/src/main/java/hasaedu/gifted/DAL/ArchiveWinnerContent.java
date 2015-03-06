@@ -22,36 +22,36 @@ public class ArchiveWinnerContent {
 
     static {
         // Add 5 sample items.
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 1 Information data","Project 1 Name","Project 1 Information","winner1@archivewinners.com","1"));
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 2 Information data","Project 2 Name","Project 2 Information","winner1@archivewinners.com","1"));
-        addItem(new ArchiveWinner("1", "Winner 3","Winner 3 Information data","Project 3 Name","Project 3 Information","winner1@archivewinners.com","1"));
-        addItem(new ArchiveWinner("1", "Winner 4","Winner 4 Information data","Project 4 Name","Project 4 Information","winner1@archivewinners.com","1"));
-        addItem(new ArchiveWinner("1", "Winner 5","Winner 5 Information data","Project 5 Name","Project 5 Information","winner1@archivewinners.com","1"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 1 Information data", "Project 1 Name", "Project 1 Information", "winner1@archivewinners.com", "1"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 2 Information data", "Project 2 Name", "Project 2 Information", "winner1@archivewinners.com", "1"));
+        addItem(new ArchiveWinner("1", "Winner 3", "Winner 3 Information data", "Project 3 Name", "Project 3 Information", "winner1@archivewinners.com", "1"));
+        addItem(new ArchiveWinner("1", "Winner 4", "Winner 4 Information data", "Project 4 Name", "Project 4 Information", "winner1@archivewinners.com", "1"));
+        addItem(new ArchiveWinner("1", "Winner 5", "Winner 5 Information data", "Project 5 Name", "Project 5 Information", "winner1@archivewinners.com", "1"));
 
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 1 Information data","Project 1 Name","Project 1 Information","winner1@archivewinners.com","2"));
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 2 Information data","Project 2 Name","Project 2 Information","winner1@archivewinners.com","2"));
-        addItem(new ArchiveWinner("1", "Winner 3","Winner 3 Information data","Project 3 Name","Project 3 Information","winner1@archivewinners.com","2"));
-        addItem(new ArchiveWinner("1", "Winner 4","Winner 4 Information data","Project 4 Name","Project 4 Information","winner1@archivewinners.com","2"));
-        addItem(new ArchiveWinner("1", "Winner 5","Winner 5 Information data","Project 5 Name","Project 5 Information","winner1@archivewinners.com","2"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 1 Information data", "Project 1 Name", "Project 1 Information", "winner1@archivewinners.com", "2"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 2 Information data", "Project 2 Name", "Project 2 Information", "winner1@archivewinners.com", "2"));
+        addItem(new ArchiveWinner("1", "Winner 3", "Winner 3 Information data", "Project 3 Name", "Project 3 Information", "winner1@archivewinners.com", "2"));
+        addItem(new ArchiveWinner("1", "Winner 4", "Winner 4 Information data", "Project 4 Name", "Project 4 Information", "winner1@archivewinners.com", "2"));
+        addItem(new ArchiveWinner("1", "Winner 5", "Winner 5 Information data", "Project 5 Name", "Project 5 Information", "winner1@archivewinners.com", "2"));
 
 
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 1 Information data","Project 1 Name","Project 1 Information","winner1@archivewinners.com","3"));
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 2 Information data","Project 2 Name","Project 2 Information","winner1@archivewinners.com","3"));
-        addItem(new ArchiveWinner("1", "Winner 3","Winner 3 Information data","Project 3 Name","Project 3 Information","winner1@archivewinners.com","3"));
-        addItem(new ArchiveWinner("1", "Winner 4","Winner 4 Information data","Project 4 Name","Project 4 Information","winner1@archivewinners.com","3"));
-        addItem(new ArchiveWinner("1", "Winner 5","Winner 5 Information data","Project 5 Name","Project 5 Information","winner1@archivewinners.com","3"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 1 Information data", "Project 1 Name", "Project 1 Information", "winner1@archivewinners.com", "3"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 2 Information data", "Project 2 Name", "Project 2 Information", "winner1@archivewinners.com", "3"));
+        addItem(new ArchiveWinner("1", "Winner 3", "Winner 3 Information data", "Project 3 Name", "Project 3 Information", "winner1@archivewinners.com", "3"));
+        addItem(new ArchiveWinner("1", "Winner 4", "Winner 4 Information data", "Project 4 Name", "Project 4 Information", "winner1@archivewinners.com", "3"));
+        addItem(new ArchiveWinner("1", "Winner 5", "Winner 5 Information data", "Project 5 Name", "Project 5 Information", "winner1@archivewinners.com", "3"));
 
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 1 Information data","Project 1 Name","Project 1 Information","winner1@archivewinners.com","4"));
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 2 Information data","Project 2 Name","Project 2 Information","winner1@archivewinners.com","4"));
-        addItem(new ArchiveWinner("1", "Winner 3","Winner 3 Information data","Project 3 Name","Project 3 Information","winner1@archivewinners.com","4"));
-        addItem(new ArchiveWinner("1", "Winner 4","Winner 4 Information data","Project 4 Name","Project 4 Information","winner1@archivewinners.com","4"));
-        addItem(new ArchiveWinner("1", "Winner 5","Winner 5 Information data","Project 5 Name","Project 5 Information","winner1@archivewinners.com","4"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 1 Information data", "Project 1 Name", "Project 1 Information", "winner1@archivewinners.com", "4"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 2 Information data", "Project 2 Name", "Project 2 Information", "winner1@archivewinners.com", "4"));
+        addItem(new ArchiveWinner("1", "Winner 3", "Winner 3 Information data", "Project 3 Name", "Project 3 Information", "winner1@archivewinners.com", "4"));
+        addItem(new ArchiveWinner("1", "Winner 4", "Winner 4 Information data", "Project 4 Name", "Project 4 Information", "winner1@archivewinners.com", "4"));
+        addItem(new ArchiveWinner("1", "Winner 5", "Winner 5 Information data", "Project 5 Name", "Project 5 Information", "winner1@archivewinners.com", "4"));
 
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 1 Information data","Project 1 Name","Project 1 Information","winner1@archivewinners.com","5"));
-        addItem(new ArchiveWinner("1", "Winner 1","Winner 2 Information data","Project 2 Name","Project 2 Information","winner1@archivewinners.com","5"));
-        addItem(new ArchiveWinner("1", "Winner 3","Winner 3 Information data","Project 3 Name","Project 3 Information","winner1@archivewinners.com","5"));
-        addItem(new ArchiveWinner("1", "Winner 4","Winner 4 Information data","Project 4 Name","Project 4 Information","winner1@archivewinners.com","5"));
-        addItem(new ArchiveWinner("1", "Winner 5","Winner 5 Information data","Project 5 Name","Project 5 Information","winner1@archivewinners.com","5"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 1 Information data", "Project 1 Name", "Project 1 Information", "winner1@archivewinners.com", "5"));
+        addItem(new ArchiveWinner("1", "Winner 1", "Winner 2 Information data", "Project 2 Name", "Project 2 Information", "winner1@archivewinners.com", "5"));
+        addItem(new ArchiveWinner("1", "Winner 3", "Winner 3 Information data", "Project 3 Name", "Project 3 Information", "winner1@archivewinners.com", "5"));
+        addItem(new ArchiveWinner("1", "Winner 4", "Winner 4 Information data", "Project 4 Name", "Project 4 Information", "winner1@archivewinners.com", "5"));
+        addItem(new ArchiveWinner("1", "Winner 5", "Winner 5 Information data", "Project 5 Name", "Project 5 Information", "winner1@archivewinners.com", "5"));
 
     }
 

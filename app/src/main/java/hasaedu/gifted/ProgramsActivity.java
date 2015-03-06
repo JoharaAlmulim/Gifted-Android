@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import hasaedu.gifted.dal.ProgramCategoryContent;
-import hasaedu.gifted.models.ProgramCategory;
+import hasaedu.gifted.DAL.ProgramCategoryContent;
+import hasaedu.gifted.Models.ProgramCategory;
 
 
 public class ProgramsActivity extends ActionBarActivity {
@@ -35,8 +35,8 @@ public class ProgramsActivity extends ActionBarActivity {
             btnWord.setLayoutParams(params);
 */
             btnWord.setGravity(Gravity.CENTER_HORIZONTAL);
-           btnWord.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-           btnWord.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+            btnWord.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            btnWord.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
 
             btnWord.setText(ProgramCategoryContent.ProgramCategories.get(i).CatName);
             btnWord.setTag(ProgramCategoryContent.ProgramCategories.get(i));
@@ -44,17 +44,19 @@ public class ProgramsActivity extends ActionBarActivity {
             linear.addView(btnWord);
         }
     }
+
     View.OnClickListener btnClicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            ProgramCategory tag =(ProgramCategory) v.getTag();
-           Intent intent = new Intent(getBaseContext(), Programs_List_Activity.class);
+            ProgramCategory tag = (ProgramCategory) v.getTag();
+            Intent intent = new Intent(getBaseContext(), Programs_List_Activity.class);
             intent.putExtra("EXTRA_CAT_ID", tag.id);
             intent.putExtra("EXTRA_CAT_NAME", tag.CatName);
             startActivity(intent);
             //Toast.makeText(getApplicationContext(), "clicked button", Toast.LENGTH_SHORT).show();
         }
     };
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

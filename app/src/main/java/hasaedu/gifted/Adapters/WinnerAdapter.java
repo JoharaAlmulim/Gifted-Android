@@ -21,6 +21,7 @@ public class WinnerAdapter extends ArrayAdapter<ArchiveWinner> {
     public WinnerAdapter(Context context, ArrayList<ArchiveWinner> winners) {
         super(context, 0, winners);
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position

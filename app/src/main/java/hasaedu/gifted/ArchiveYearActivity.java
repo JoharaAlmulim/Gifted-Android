@@ -11,25 +11,25 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import hasaedu.gifted.dal.ArchiveYearContent;
-import hasaedu.gifted.models.ArchiveYears;
+import hasaedu.gifted.DAL.ArchiveYearContent;
+import hasaedu.gifted.Models.ArchiveYears;
 
 
 public class ArchiveYearActivity extends ActionBarActivity {
 
-   // Button[] btnWord = new Button[ArchiveYearContent.ITEMS.size()];
-  //  LinearLayout linear;
+    // Button[] btnWord = new Button[ArchiveYearContent.ITEMS.size()];
+    //  LinearLayout linear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_archive_year);
-CreateButtons();
+        CreateButtons();
     }
 
     private void CreateButtons() {
-        LinearLayout   linear = (LinearLayout) findViewById(R.id.buttonslinearlayout);
-        for (int i = 0; i <ArchiveYearContent.ITEMS.size(); i++) {
-            Button  btnWord = new Button(this);
+        LinearLayout linear = (LinearLayout) findViewById(R.id.buttonslinearlayout);
+        for (int i = 0; i < ArchiveYearContent.ITEMS.size(); i++) {
+            Button btnWord = new Button(this);
             btnWord.setGravity(Gravity.CENTER_HORIZONTAL);
             btnWord.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
             btnWord.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -39,10 +39,11 @@ CreateButtons();
             linear.addView(btnWord);
         }
     }
+
     View.OnClickListener btnClicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            ArchiveYears tag =(ArchiveYears) v.getTag();
+            ArchiveYears tag = (ArchiveYears) v.getTag();
             Intent intent = new Intent(getBaseContext(), ArchiveListActivity.class);
             intent.putExtra("EXTRA_YEAR_ID", tag.id);
             intent.putExtra("EXTRA_YEAR_NAME", tag.YearName);
@@ -51,6 +52,7 @@ CreateButtons();
             //Toast.makeText(getApplicationContext(), "clicked button", Toast.LENGTH_SHORT).show();
         }
     };
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

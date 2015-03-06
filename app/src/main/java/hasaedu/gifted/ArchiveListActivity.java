@@ -10,11 +10,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import hasaedu.gifted.adapters.WinnerAdapter;
-import hasaedu.gifted.dal.ArchiveWinnerContent;
+import hasaedu.gifted.Adapters.WinnerAdapter;
+import hasaedu.gifted.DAL.ArchiveWinnerContent;
 
-import hasaedu.gifted.models.ArchiveWinner;
-
+import hasaedu.gifted.Models.ArchiveWinner;
 
 
 public class ArchiveListActivity extends ActionBarActivity {
@@ -24,24 +23,25 @@ public class ArchiveListActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_archive_list);
 
-    Bundle extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras();
 
-    String year_id = extras.getString("EXTRA_YEAR_ID");
-    String year_name = extras.getString("EXTRA_YEAR_NAME");
+        String year_id = extras.getString("EXTRA_YEAR_ID");
+        String year_name = extras.getString("EXTRA_YEAR_NAME");
 
-    // Get ListView object from xml
-    ListView  listView = (ListView) findViewById(R.id.list);
-    TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
+        // Get ListView object from xml
+        ListView listView = (ListView) findViewById(R.id.list);
+        TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
 
-        txtTitle.setText("Archive of Year : "+year_name);
+        txtTitle.setText("Archive of Year : " + year_name);
 
-    ArrayList<ArchiveWinner> arrayOfWinners = ArchiveWinnerContent.getWinnerByYearId(year_id);
-    // Create the adapter to convert the array to views
+        ArrayList<ArchiveWinner> arrayOfWinners = ArchiveWinnerContent.getWinnerByYearId(year_id);
+        // Create the adapter to convert the array to views
         WinnerAdapter adapter = new WinnerAdapter(this, arrayOfWinners);
 // Attach the adapter to a ListView
 
-    listView.setAdapter(adapter);
-}
+        listView.setAdapter(adapter);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

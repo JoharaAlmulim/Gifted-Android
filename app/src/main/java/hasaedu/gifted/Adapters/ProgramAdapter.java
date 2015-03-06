@@ -20,6 +20,7 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
     public ProgramAdapter(Context context, ArrayList<Program> programs) {
         super(context, 0, programs);
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position

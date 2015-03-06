@@ -14,7 +14,7 @@ public class ArchiveWinner {
     public String ArchiveYearId;
 
 
-    public ArchiveWinner(String id, String WinnerName,String WinnerInfo,String ProjectTitle,String ProjectDesc,String WinnerEmail,String ArchiveYearId) {
+    public ArchiveWinner(String id, String WinnerName, String WinnerInfo, String ProjectTitle, String ProjectDesc, String WinnerEmail, String ArchiveYearId) {
         this.id = id;
         this.WinnerName = WinnerName;
         this.WinnerInfo = WinnerInfo;
