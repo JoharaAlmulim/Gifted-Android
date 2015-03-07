@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hasaedu.gifted" >
+    package="hasaedu.gifted">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -13,19 +13,20 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Register"
             android:label="@string/title_activity_register"
-            android:parentActivityName=".LoginActivity" >
+            android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.LoginActivity" />
@@ -33,7 +34,7 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.MainActivity" />
@@ -44,7 +45,7 @@
         <activity
             android:name=".ProgramsActivity"
             android:label="@string/title_activity_programs"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.MainActivity" />
@@ -52,7 +53,7 @@
         <activity
             android:name=".CalendarActivity"
             android:label="@string/title_activity_calendar"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.MainActivity" />
@@ -60,7 +61,7 @@
         <activity
             android:name=".AboutUsActivity"
             android:label="@string/title_activity_about_us"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.MainActivity" />
@@ -68,7 +69,7 @@
         <activity
             android:name=".ContactUsActivity"
             android:label="@string/title_activity_contact_us"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.MainActivity" />
@@ -76,7 +77,7 @@
         <activity
             android:name=".ArchiveYearActivity"
             android:label="@string/title_activity_archive_year"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.MainActivity" />
@@ -84,7 +85,7 @@
         <activity
             android:name=".Programs_List_Activity"
             android:label="@string/title_activity_programs__list_"
-            android:parentActivityName=".ProgramsActivity" >
+            android:parentActivityName=".ProgramsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.ProgramsActivity" />
@@ -92,7 +93,7 @@
         <activity
             android:name=".Program_DetailActivity"
             android:label="@string/title_activity_program__detail"
-            android:parentActivityName=".Programs_List_Activity" >
+            android:parentActivityName=".Programs_List_Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.Programs_List_Activity" />
@@ -100,10 +101,18 @@
         <activity
             android:name=".ArchiveListActivity"
             android:label="@string/title_activity_archive_list"
-            android:parentActivityName=".ArchiveYearActivity" >
+            android:parentActivityName=".ArchiveYearActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hasaedu.gifted.ArchiveYearActivity" />
+        </activity>
+        <activity
+            android:name=".WinnerDetailActivity"
+            android:label="@string/title_activity_winner_detail"
+            android:parentActivityName=".ArchiveListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hasaedu.gifted.ArchiveListActivity" />
         </activity>
     </application>
 

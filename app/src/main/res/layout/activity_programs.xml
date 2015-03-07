@@ -32,14 +32,12 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="fill_parent"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/programbuttonslinearlayout"
             >
 
                 </LinearLayout>
-
-
         </LinearLayout>
 
         </ScrollView>

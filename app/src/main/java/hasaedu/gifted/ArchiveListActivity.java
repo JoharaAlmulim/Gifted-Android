@@ -1,10 +1,12 @@
 package hasaedu.gifted;
 
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
+import android.content.Intent;
+import android.os.Bundle;
+
+
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,8 +17,10 @@ import hasaedu.gifted.DAL.ArchiveWinnerContent;
 
 import hasaedu.gifted.Models.ArchiveWinner;
 
+import hasaedu.gifted.base.BaseActionBarActivity;
 
-public class ArchiveListActivity extends ActionBarActivity {
+
+public class ArchiveListActivity extends BaseActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +28,12 @@ public class ArchiveListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_archive_list);
 
         Bundle extras = getIntent().getExtras();
-
-        String year_id = extras.getString("EXTRA_YEAR_ID");
-        String year_name = extras.getString("EXTRA_YEAR_NAME");
-
+        String year_id = "1";
+        String year_name = "2010";
+        if (extras != null) {
+            year_id = extras.getString("EXTRA_YEAR_ID");
+            year_name = extras.getString("EXTRA_YEAR_NAME");
+        }
         // Get ListView object from xml
         ListView listView = (ListView) findViewById(R.id.list);
         TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
@@ -40,27 +46,43 @@ public class ArchiveListActivity extends ActionBarActivity {
 // Attach the adapter to a ListView
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // ListView Clicked item index
+                int itemPosition = position;
+
+                // ListView Clicked item value
+                ArchiveWinner itemValue = (ArchiveWinner) parent.getItemAtPosition(position);
+                //  Bundle bundle = new Bundle();
+                //  bundle.putSerializable();
+
+                Intent intent = new Intent(getBaseContext(), WinnerDetailActivity.class);
+                intent.putExtra("EXTRA_WINNER_ID", itemValue.id);
+                intent.putExtra("EXTRA_WINNER_NAME", itemValue.WinnerName);
+                intent.putExtra("EXTRA_WINNER_INFO", itemValue.WinnerInfo);
+                intent.putExtra("EXTRA_PROJECT_TITLE", itemValue.ProjectTitle);
+                intent.putExtra("EXTRA_PROJECT_DESC", itemValue.ProjectDesc);
+                intent.putExtra("EXTRA_WINNER_EMAIL", itemValue.WinnerEmail);
+
+                intent.putExtra("EXTRA_ITEM_POSITION", itemPosition);
+                intent.putExtra("EXTRA_YEAR_ID", itemValue.ArchiveYearId);
+
+
+                startActivity(intent);
+
+                    /*
+                    Show Alert
+
+                    Toast.makeText(getApplicationContext(),
+                    "Position :" + itemPosition + "  ListItem : " + itemValue.ProgramName, Toast.LENGTH_LONG)
+                    .show();
+
+                    */
+            }
+        });
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_archive_list, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

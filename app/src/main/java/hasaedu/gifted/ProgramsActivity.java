@@ -28,16 +28,10 @@ public class ProgramsActivity extends ActionBarActivity {
         LinearLayout linear = (LinearLayout) findViewById(R.id.programbuttonslinearlayout);
         for (int i = 0; i < ProgramCategoryContent.ProgramCategories.size(); i++) {
             Button btnWord = new Button(this);
-/*
-            ViewGroup.LayoutParams params = btnWord.getLayoutParams();
-            params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-            params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
-            btnWord.setLayoutParams(params);
-*/
+
             btnWord.setGravity(Gravity.CENTER_HORIZONTAL);
             btnWord.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
             btnWord.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
-
             btnWord.setText(ProgramCategoryContent.ProgramCategories.get(i).CatName);
             btnWord.setTag(ProgramCategoryContent.ProgramCategories.get(i));
             btnWord.setOnClickListener(btnClicked);

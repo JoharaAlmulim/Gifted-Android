@@ -27,10 +27,12 @@ public class Programs_List_Activity extends ActionBarActivity {
         setContentView(R.layout.activity_programs__list);
 
         Bundle extras = getIntent().getExtras();
-
-        String catid = extras.getString("EXTRA_CAT_ID");
-        String catname = extras.getString("EXTRA_CAT_NAME");
-
+        String catid = "1";
+        String catname = "Student";
+        if (extras != null) {
+            catid = extras.getString("EXTRA_CAT_ID");
+            catname = extras.getString("EXTRA_CAT_NAME");
+        }
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.list);
         TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
