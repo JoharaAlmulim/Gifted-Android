@@ -18,6 +18,9 @@
     <string name="title_activity_archive_list">ArchiveListActivity</string>
     <string name="winner_for_Year">Archive of Year</string>
     <string name="title_activity_winner_detail">WinnerDetailActivity</string>
-
+    <string name="btn_Set_Reminder_Text">Set a Reminder</string>
+    <string name="decision">Do you wanted to Set a Reminder</string>
+    <string name="positive_button">YES</string>
+    <string name="negative_button">CANCEL</string>
 
 </resources>

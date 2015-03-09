@@ -10,4 +10,45 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"></LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/userpanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Project Title : "
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/txtEvenTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Information : "
+                android:layout_marginStart="30dp"
+                android:id="@+id/txtEventDesc" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/btn_Set_Reminder"
+                android:text="@string/btn_Set_Reminder_Text" />
+
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -1,11 +1,19 @@
 package hasaedu.gifted.base;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.Calendar;
+
+import hasaedu.gifted.Models.CalendarEvent;
 import hasaedu.gifted.R;
 
 /**
@@ -13,6 +21,19 @@ import hasaedu.gifted.R;
  */
 public class BaseActionBarActivity extends ActionBarActivity {
 
+    protected void setAlarm(Context context, CalendarEvent targetCal) {
+
+
+        Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+
+        intent.putExtra("CALENDAR_EVENT_TITLE", targetCal.eventTitle);
+        intent.putExtra("CALENDAR_EVENT_DESC", targetCal.eventDesc);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        am.set(AlarmManager.RTC_WAKEUP,/*targetCal.getAsCalendar().getTimeInMillis()*/ SystemClock.elapsedRealtime() + 60 * 1000, pendingIntent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
