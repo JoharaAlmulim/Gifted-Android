@@ -86,7 +86,7 @@
                 android:value="hasaedu.gifted.MainActivity" />
         </activity>
         <activity
-            android:name=".ProgramsActivity$Programs_List_Activity"
+            android:name=".Programs_List_Activity"
             android:label="@string/title_activity_programs__list_"
             android:parentActivityName=".ProgramsActivity">
             <meta-data
@@ -96,10 +96,10 @@
         <activity
             android:name=".Program_DetailActivity"
             android:label="@string/title_activity_program__detail"
-            android:parentActivityName=".ProgramsActivity$Programs_List_Activity">
+            android:parentActivityName=".Programs_List_Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ProgramsActivity$Programs_List_Activity" />
+                android:value=".Programs_List_Activity" />
         </activity>
         <activity
             android:name=".ArchiveListActivity"
