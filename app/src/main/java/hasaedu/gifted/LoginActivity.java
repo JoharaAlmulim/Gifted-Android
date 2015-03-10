@@ -65,7 +65,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         btn_create_account.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Register.class);
+                Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(i);
             }
         });

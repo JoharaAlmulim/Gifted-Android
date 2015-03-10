@@ -11,11 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 
+import hasaedu.gifted.Models.Register;
+import hasaedu.gifted.base.BaseActionBarActivity;
 import hasaedu.gifted.validators.FormRegisterValidator;
 
 
-public class Register extends ActionBarActivity {
-   // private UserLoginTask mAuthTask = null;
+public class RegisterActivity extends BaseActionBarActivity {
+    // private UserLoginTask mAuthTask = null;
 
     // UI references.
     private EditText txtname;
@@ -27,13 +29,14 @@ public class Register extends ActionBarActivity {
 
     private View mProgressView;
     private View mregister_FormView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         //set login action
-        Button btn_login = (Button)findViewById(R.id.btn_login);
+        Button btn_login = (Button) findViewById(R.id.btn_login);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,18 +58,27 @@ public class Register extends ActionBarActivity {
         mregister_FormView = findViewById(R.id.register_form);
         mProgressView = findViewById(R.id.register_progress);
 
+
         Button btn_register = (Button) findViewById(R.id.btn_register);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptRegister();
+
+                String email = txtemail.getText().toString();
+                String password = txtpassword.getText().toString();
+                String name = txtname.getText().toString();
+                String renterPassword = txtrenterpassword.getText().toString();
+                String mobile = txtmobile.getText().toString();
+                boolean sms_notify = sch_sms_notify.isChecked();
+                Register oreg = new Register("0", name, email, password, renterPassword, mobile, sms_notify);
+
+                attemptRegister(oreg);
             }
         });
 
     }
 
-    private void attemptRegister() {
-
+    boolean validateData(Register oreg) {
         txtname.setError(null);
         txtemail.setError(null);
         txtpassword.setError(null);
@@ -74,48 +86,58 @@ public class Register extends ActionBarActivity {
         txtmobile.setError(null);
         sch_sms_notify.setError(null);
 
-        String email = txtemail.getText().toString();
-        String password = txtpassword.getText().toString();
-        String name = txtname.getText().toString();
-        String renterpassword = txtrenterpassword.getText().toString();
-        String mobile = txtmobile.getText().toString();
-        boolean sms_notify = sch_sms_notify.isChecked();
-
         boolean cancel = false;
         View focusView = null;
 
         FormRegisterValidator fv = new FormRegisterValidator();
-        // validate user input data
 
-        if (!fv.isPasswordValid(password)) {
-            txtpassword.setError(getString(R.string.error_invalid_password));
+        String mobileError = fv.ValidateMobile(oreg.mobile);
+        if (mobileError.isEmpty() == false) {
+            txtmobile.setError(mobileError);
+            focusView = txtmobile;
+            cancel = true;
+        }
+
+        String passAgainError = fv.ValidatePasswordAgain(oreg.password, oreg.passwordAgain);
+        if (passAgainError.isEmpty() == false) {
+            txtrenterpassword.setError(passAgainError);
+            focusView = txtrenterpassword;
+            cancel = true;
+        }
+
+        String passError = fv.ValidatePassword(oreg.password);
+        if (passError.isEmpty() == false) {
+            txtpassword.setError(passError);
             focusView = txtpassword;
             cancel = true;
         }
 
-
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_register, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        String emailError = fv.ValidateEmail(oreg.email);
+        if (emailError.isEmpty() == false) {
+            txtemail.setError(emailError);
+            focusView = txtemail;
+            cancel = true;
         }
 
-        return super.onOptionsItemSelected(item);
+        String nameError = fv.ValidateName(oreg.name);
+        if (nameError.isEmpty() == false) {
+            txtname.setError(nameError);
+            focusView = txtname;
+            cancel = true;
+        }
+
+        if (cancel) {
+            focusView.requestFocus();
+        }
+
+        return cancel;
+    }
+
+    private void attemptRegister(Register oreg) {
+
+
+        if (!validateData(oreg)) {
+
+        }
     }
 }

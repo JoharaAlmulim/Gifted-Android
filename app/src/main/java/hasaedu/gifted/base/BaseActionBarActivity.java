@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
+
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.Calendar;
 
+import hasaedu.gifted.ArchiveListActivity;
+import hasaedu.gifted.CalendarActivity;
+import hasaedu.gifted.MainActivity;
 import hasaedu.gifted.Models.CalendarEvent;
 import hasaedu.gifted.R;
 
@@ -39,8 +42,22 @@ public class BaseActionBarActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        try {
+
+
+            if (this instanceof MainActivity) {
+                // getActionBar().setDisplayHomeAsUpEnabled(false);
+            } else if (this instanceof CalendarActivity) {
+                // getActionBar().setDisplayHomeAsUpEnabled(false);
+            } else if (this instanceof ArchiveListActivity) {
+            } else {
+                getActionBar().setDisplayHomeAsUpEnabled(true);
+            }
+        } catch (Exception ex) {
+
+        }
         //NavUtils.navigateUpFromSameTask(this);
+
     }
 
     @Override

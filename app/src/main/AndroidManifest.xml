@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:name=".app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Register"
+            android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
             android:parentActivityName=".LoginActivity">
             <meta-data
@@ -85,7 +86,7 @@
                 android:value="hasaedu.gifted.MainActivity" />
         </activity>
         <activity
-            android:name=".Programs_List_Activity"
+            android:name=".ProgramsActivity$Programs_List_Activity"
             android:label="@string/title_activity_programs__list_"
             android:parentActivityName=".ProgramsActivity">
             <meta-data
@@ -95,10 +96,10 @@
         <activity
             android:name=".Program_DetailActivity"
             android:label="@string/title_activity_program__detail"
-            android:parentActivityName=".Programs_List_Activity">
+            android:parentActivityName=".ProgramsActivity$Programs_List_Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="hasaedu.gifted.Programs_List_Activity" />
+                android:value=".ProgramsActivity$Programs_List_Activity" />
         </activity>
         <activity
             android:name=".ArchiveListActivity"

@@ -12,21 +12,25 @@ package hasaedu.gifted.Models;
 public class Register {
 
     public String id;
-    public String Name;
-    public String ProgramIcon;
-    public String ProgramDesc;
-    public String ProgramCatId;
+    public String name;
+    public String email;
+    public String password;
+    public String passwordAgain;
+    public String mobile;
+    public boolean receiveSms;
 
-    public Register(String id, String name, String desc, String icon, String catid) {
+    public Register(String id, String name, String email, String password, String passwordAgain, String mobile, boolean receiveSms) {
         this.id = id;
-        this.Name = name;
-        this.ProgramIcon = icon;
-        this.ProgramDesc = desc;
-        this.ProgramCatId = catid;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.passwordAgain = passwordAgain;
+        this.mobile = mobile;
+        this.receiveSms = receiveSms;
     }
 
     @Override
     public String toString() {
-        return Name;
+        return name;
     }
 }
