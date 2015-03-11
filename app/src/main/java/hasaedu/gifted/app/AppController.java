@@ -14,6 +14,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
+import hasaedu.gifted.R;
 import hasaedu.gifted.util.LruBitmapCache;
 
 /**

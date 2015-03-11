@@ -1,8 +1,12 @@
 package hasaedu.gifted.validators;
 
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.text.TextUtils;
 import android.util.Patterns;
+import android.support.annotation.NonNull;
 
 /**
  * Created by Ashraf on Mar 03, 2015.
@@ -14,14 +18,13 @@ public class FormRegisterValidator {
 
     public String ValidatePassword(String password) {
         String toReturn = "";
-        if(!TextUtils.isEmpty(password)) {
+        if (!TextUtils.isEmpty(password)) {
             //TODO: Replace this with your own logic
             if (password.length() < 4) {
                 toReturn = "error invalid password";
             }
 
-        }else
-        {
+        } else {
             toReturn = "password is required";
         }
         return toReturn;
@@ -78,6 +81,14 @@ public class FormRegisterValidator {
             toReturn = "Mobile is required";
         }
         return toReturn;
+    }
+
+    public boolean isNetworkOn(@NonNull Context context) {
+        ConnectivityManager connMgr =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        return (networkInfo != null && networkInfo.isConnected());
     }
 
 }

@@ -24,6 +24,13 @@ import hasaedu.gifted.R;
  */
 public class BaseActionBarActivity extends ActionBarActivity {
 
+    protected String BASEURL;
+    protected PreferencesManager session;
+
+    public boolean isUserSignedIn() {
+        return session.isLoggedIn();
+    }
+
     protected void setAlarm(Context context, CalendarEvent targetCal) {
 
 
@@ -41,7 +48,8 @@ public class BaseActionBarActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        session = new PreferencesManager(getApplicationContext());
+        BASEURL = getString(R.string.BASEURL);
         try {
 
 

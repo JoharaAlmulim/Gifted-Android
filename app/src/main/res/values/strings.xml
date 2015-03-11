@@ -22,5 +22,9 @@
     <string name="decision">Do you wanted to Set a Reminder</string>
     <string name="positive_button">YES</string>
     <string name="negative_button">CANCEL</string>
-
+    <string name="BASEURL">https://gifted-ashrafeme.c9.io/api/v1</string>
+    <string name="title_activity_show_register_message">ShowRegisterMessageActivity</string>
+    <string name="title_activity_new_login">NewLoginActivity</string>
+    <string name="btn_log_Out">Log Out</string>
+    <string name="btn_Send_SMS">Send SMS</string>
 </resources>

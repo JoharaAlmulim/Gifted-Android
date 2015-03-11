@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import hasaedu.gifted.base.BaseActionBarActivity;
 
@@ -17,15 +18,50 @@ public class MainActivity extends BaseActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (session.getUserDetails().userRole == null) {
+            session.logoutUser();
+        }
 
         Button btn_login = (Button) findViewById(R.id.btn_login);
+        Button btn_LogOut = (Button) findViewById(R.id.btn_LogOut);
+        Button btn_SendSMS = (Button) findViewById(R.id.btn_SendSMS);
+        TextView lblWelcomeBack = (TextView) findViewById(R.id.lblWelcomeBack);
+        if (isUserSignedIn()) {
+            btn_login.setVisibility(View.INVISIBLE);
 
+            btn_LogOut.setVisibility(View.VISIBLE);
+            lblWelcomeBack.setVisibility(View.VISIBLE);
+            lblWelcomeBack.setText("Welcome Back: " + session.getUserDetails().name);
+            if (session.getUserDetails().userRole.equals("admin")) {
+                btn_SendSMS.setVisibility(View.VISIBLE);
+            }
+
+
+        } else {
+            btn_LogOut.setVisibility(View.INVISIBLE);
+            lblWelcomeBack.setVisibility(View.INVISIBLE);
+            btn_SendSMS.setVisibility(View.INVISIBLE);
+
+
+            btn_login.setVisibility(View.VISIBLE);
+        }
+
+        btn_LogOut.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                session.logoutUser();
+
+                // Switching to Register screen
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
         // Listening to register new account link
         btn_login.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 // Switching to Register screen
-                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent i = new Intent(getApplicationContext(), NewLoginActivity.class);
                 startActivity(i);
             }
         });
