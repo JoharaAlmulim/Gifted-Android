@@ -61,7 +61,7 @@ public class CalendarEventContent {
 
     }
 
-    private static void addItem(CalendarEvent item) {
+    public static void addItem(CalendarEvent item) {
         CalendarEvents.add(item);
         Program_MAP.put(item.id, item);
     }

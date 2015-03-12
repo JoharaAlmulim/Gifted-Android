@@ -13,12 +13,12 @@ import hasaedu.gifted.Models.ProgramCategory;
  */
 public class ProgramCategoryContent {
 
-    public static List<ProgramCategory> ProgramCategories = new ArrayList<ProgramCategory>();
+    public static List<ProgramCategory> ProgramCategories = new ArrayList<>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static Map<String, ProgramCategory> ProgramCategory_MAP = new HashMap<String, ProgramCategory>();
+    public static Map<String, ProgramCategory> ProgramCategory_MAP = new HashMap<>();
 
     static {
         // Add 5 sample items.

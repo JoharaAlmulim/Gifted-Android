@@ -1,13 +1,18 @@
 package hasaedu.gifted;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import hasaedu.gifted.base.BaseActionBarActivity;
 
@@ -45,6 +50,30 @@ public class MainActivity extends BaseActionBarActivity {
 
             btn_login.setVisibility(View.VISIBLE);
         }
+
+        btn_SendSMS.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                final EditText input = new EditText(v.getContext());
+                // Switching to Register screen
+                new AlertDialog.Builder(v.getContext())
+                        .setTitle("NEW SMS")
+                        .setMessage("Write SMS Message")
+                        .setView(input)
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+
+                                Editable value = input.getText();
+                                Toast.makeText(getApplicationContext(), value,
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // Do nothing.
+                    }
+                }).show();
+            }
+        });
 
         btn_LogOut.setOnClickListener(new View.OnClickListener() {
 

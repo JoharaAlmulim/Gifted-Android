@@ -9,8 +9,11 @@ import android.support.v4.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,6 +46,7 @@ public class CalendarActivity extends BaseActionBarActivity {
                 caldroidFragment.setTextColorForDate(R.color.white, a.eventDate);
             }
         }
+        caldroidFragment.refreshView();
     }
 
     @Override
@@ -92,7 +96,23 @@ public class CalendarActivity extends BaseActionBarActivity {
         FragmentTransaction t = getSupportFragmentManager().beginTransaction();
         t.replace(R.id.calendar1, caldroidFragment);
         t.commit();
+        Button btn_Add_Event = (Button) findViewById(R.id.btn_Add_Event);
+        if (isUserSignedIn()) {
+            if (session.getUserDetails().userRole.equals("admin")) {
 
+                btn_Add_Event.setVisibility(View.VISIBLE);
+            }
+        }
+
+        btn_Add_Event.setOnClickListener
+                (new View.OnClickListener() {
+
+                    public void onClick(View v) {
+
+                        openAddEvent(v);
+
+                    }
+                });
 
         // Setup listener
         final CaldroidListener listener = new CaldroidListener() {
@@ -165,8 +185,65 @@ public class CalendarActivity extends BaseActionBarActivity {
         caldroidFragment.setCaldroidListener(listener);
 
 
+    }
 
+    private void openAddEvent(final View v) {
+        LayoutInflater li = LayoutInflater.from(v.getContext());
+        View promptsView = li.inflate(R.layout.addcalendarevent, null);
 
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                v.getContext());
+
+        // set prompts.xml to alertdialog builder
+        alertDialogBuilder.setView(promptsView);
+
+        final EditText txtEventName = (EditText) promptsView
+                .findViewById(R.id.txtEventName);
+
+        final EditText txtEventDesc = (EditText) promptsView
+                .findViewById(R.id.txtEventDesc);
+
+        final DatePicker datePicker = (DatePicker) promptsView
+                .findViewById(R.id.datePicker);
+
+        // set dialog message
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // get user input and set it to result
+                                // edit text
+                                //  result.setText(userInput.getText());
+                                int day = datePicker.getDayOfMonth();
+                                int month = datePicker.getMonth();
+                                int year = datePicker.getYear();
+
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(year, month, day);
+
+                                Date dd = calendar.getTime();
+                                int ceid = CalendarEventContent.CalendarEvents.size() + 1;
+                                String eventName = txtEventName.getText().toString();
+                                String eventDesc = txtEventDesc.getText().toString();
+                                CalendarEvent oce = new CalendarEvent(String.valueOf(ceid), eventName, eventDesc, dd);
+                                CalendarEventContent.CalendarEvents.add(oce);
+                                setCustomResourceForDates();
+
+                            }
+                        })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
     }
 
     public void open(View view, final CalendarEvent decision) {

@@ -8,13 +8,22 @@
         android:id="@+id/calendar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical">
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/panellayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
             android:id="@+id/userpanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,8 +56,16 @@
                 android:layout_gravity="center"
                 android:id="@+id/btn_Set_Reminder"
                 android:text="@string/btn_Set_Reminder_Text" />
-
-
         </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                android:id="@+id/btn_Add_Event"
+                android:text="@string/btn_Add_Event" />
+        </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

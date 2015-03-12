@@ -3,8 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="hasaedu.gifted.WinnerDetailActivity">
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+        android:id="@+id/action_Home"
+        android:title="@string/action_Home"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_programs"
+        android:title="@string/action_programs"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Calendar"
+        android:title="@string/action_Calendar"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_archive"
+        android:title="@string/action_archive"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_aboutus"
+        android:title="@string/action_aboutus"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_contactus"
+        android:title="@string/action_contactus"
         android:orderInCategory="100"
         app:showAsAction="never" />
 </menu>

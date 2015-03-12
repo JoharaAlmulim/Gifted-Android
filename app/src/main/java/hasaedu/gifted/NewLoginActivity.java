@@ -91,8 +91,8 @@ public class NewLoginActivity extends BaseActionBarActivity {
                             String name = jObject.getString("name");
                             String email = jObject.getString("email");
                             String apiKey = jObject.getString("apiKey");
-                            String userRole = jObject.getString("userRole");
-                            String userMobile = jObject.getString("userMobile");
+                            String userRole = jObject.getString("UserRole");
+                            String userMobile = jObject.getString("MobileNumber");
 
                             CurrentUser ouser = new CurrentUser(name, email, apiKey, userRole, userMobile);
                             session.createLoginSession(ouser);

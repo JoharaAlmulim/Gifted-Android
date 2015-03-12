@@ -13,10 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+import hasaedu.gifted.AboutUsActivity;
 import hasaedu.gifted.ArchiveListActivity;
+import hasaedu.gifted.ArchiveYearActivity;
 import hasaedu.gifted.CalendarActivity;
+import hasaedu.gifted.ContactUsActivity;
 import hasaedu.gifted.MainActivity;
 import hasaedu.gifted.Models.CalendarEvent;
+import hasaedu.gifted.ProgramsActivity;
 import hasaedu.gifted.R;
 
 /**
@@ -83,12 +87,44 @@ public class BaseActionBarActivity extends ActionBarActivity {
         int id = item.getItemId();
         switch (id) {
             // Respond to the action bar's Up/Home button
-            case R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+            case R.id.action_Home:
+                // NavUtils.navigateUpFromSameTask(this);
+
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
                 return true;
 
-            case R.id.action_settings:
+            case R.id.action_programs:
+                // NavUtils.navigateUpFromSameTask(this);
+
+                Intent i1 = new Intent(getApplicationContext(), ProgramsActivity.class);
+                startActivity(i1);
                 return true;
+            case R.id.action_archive:
+                // NavUtils.navigateUpFromSameTask(this);
+
+                Intent i2 = new Intent(getApplicationContext(), ArchiveYearActivity.class);
+                startActivity(i2);
+                return true;
+            case R.id.action_Calendar:
+                // NavUtils.navigateUpFromSameTask(this);
+
+                Intent i3 = new Intent(getApplicationContext(), CalendarActivity.class);
+                startActivity(i3);
+                return true;
+            case R.id.action_aboutus:
+                // NavUtils.navigateUpFromSameTask(this);
+
+                Intent i4 = new Intent(getApplicationContext(), AboutUsActivity.class);
+                startActivity(i4);
+                return true;
+            case R.id.action_contactus:
+                // NavUtils.navigateUpFromSameTask(this);
+
+                Intent i5 = new Intent(getApplicationContext(), ContactUsActivity.class);
+                startActivity(i5);
+                return true;
+
 
             default:
                 return super.onOptionsItemSelected(item);
